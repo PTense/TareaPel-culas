@@ -7,15 +7,29 @@ namespace Pelicula
     public class Pelicula
     {
         //Campos
+            private String titulo;
+            private int16 año;
+            private String país;
+            private String director;
         private List<Actor> actores = new List<Actor>();
 
         //Constructores
-     
+        public Pelicula()
+        public Pelicula(string titulo, int16 año)
+        {
+            this.titulo=titulo;
+            this.año=año;
+                
+                
+                
         //Métodos
+        public string GetTitulo(){return titulo;}
+        public void SetTitulo(string title){titulo=title}
      
         public void Imprime()
         {
      //       Console.WriteLine($"{titulo} ({año})");
+            Console.WriteLine($"{titulo} ({año}");
 
         }
 
@@ -45,11 +59,7 @@ namespace Pelicula
 
         static void Main(string[] args)
         {
-            private String titulo;
-            private int16 año;
-            private String país;
-            private String director;
-            
+    
             Pelicula p1 = new Pelicula();
             p1.SetTitulo("Everything Everywhere All at Once");
             p1.SetAño(2022);
