@@ -45,10 +45,10 @@ namespace Pelicula
 
         static void Main(string[] args)
         {
-            public String titulo;
-            public int16 año;
-            public String país;
-            public String director;
+            private String titulo;
+            private int16 año;
+            private String país;
+            private String director;
             
             Pelicula p1 = new Pelicula();
             p1.SetTitulo("Everything Everywhere All at Once");
