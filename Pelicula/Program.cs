@@ -11,7 +11,7 @@ namespace Pelicula
             private int16 año;
             private String país;
             private String director;
-        private List<Actor> actores = new List<Actor>();
+            private List<Actor> actores = new List<Actor>();
 
         //Constructores
         public Pelicula()
@@ -19,19 +19,39 @@ namespace Pelicula
         {
             this.titulo=titulo;
             this.año=año;
+        }
                 
                 
                 
         //Métodos
         public string GetTitulo(){return titulo;}
         public void SetTitulo(string title){titulo=title}
+        
+        public int GetAño(){return año;}
+        public void SetAño(int year){año=year;}
+        public string GetPais(){return pais;}
+        public string SetPais(string cty){pais=cty;}
+        public string GetDirector(){return director;}
+        public void SetDirector(string dir){director=dir;}
      
+        
+        
         public void Imprime()
         {
      //       Console.WriteLine($"{titulo} ({año})");
             Console.WriteLine($"{titulo} ({año}");
 
         }
+        
+        public void AgregaActor(Actor actor)
+        {
+            actores.Add(actor);
+        }
+        public void ImprimeActores()
+        {
+            foreach (Actor persona in actores)
+            {
+                Console.WriteLine($"{persona.GetNombre()} ({persona.GetAño()})");
 
 
     }
@@ -39,15 +59,23 @@ namespace Pelicula
     public class Actor
     {
         //Propiedades
+        string nombre;
+        int año;
 
         //Constructores
-
+        public Actor()
+        public Actor(string nombre, int año)
+        {
+            this.nombre = nombre;
+            this.año = año;
+        }
 
         //Métodos 
-        public void Imprime()
-        {
-            Console.WriteLine($"{Nombre} ({Año})");
-        }
+        public string GetNombre(){return nombre;}
+        public void SetNombre(string name){nombre=name}
+        public int GetAño(){return año;}
+        public void SetAño(int year){año=year;}
+        
     }
 
     // Puedes probar tu código en Main() pero lo importante
@@ -59,7 +87,7 @@ namespace Pelicula
 
         static void Main(string[] args)
         {
-    
+            
             Pelicula p1 = new Pelicula();
             p1.SetTitulo("Everything Everywhere All at Once");
             p1.SetAño(2022);
@@ -69,6 +97,24 @@ namespace Pelicula
             p2.SetTitulo("Parasyte");
             p2.SetAño(2019);
             Console.WriteLine("{0}({1})", p2.GetTitulo(), p2.GetAño());
+            
+            List<Pelicula> peliculas = new List<Pelicula>();
+            peliculas.Add(new Pelicula("Ratatouille", 2007));
+            peliculas.Add(new Pelicula("Kung Fu Panda", 2008));
+            peliculas.Add(new Pelicula("Whiplash", 2014));
+            peliculas.Add(new Pelicula("Fight Club", 1999));
+            peliculas.Add(new Pelicula("Interestellar", 2014));
+            
+            foreach(Pelicula film in peliculas)
+            {
+                film.Imprime();
+            }
+            
+            p1.AgregaActor(new Actor("Ryan Gosling", 1980));
+            p1.AgregaActor(new Actor("Emma Stone", 1988));
+            
+            p1.ImprimeActores();
+                
             
         }
     }
