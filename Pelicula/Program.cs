@@ -45,7 +45,21 @@ namespace Pelicula
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            public String titulo;
+            public int16 año;
+            public String país;
+            public String director;
+            
+            Pelicula p1 = new Pelicula();
+            p1.SetTitulo("Everything Everywhere All at Once");
+            p1.SetAño(2022);
+            Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
+            
+            Pelicula p2 = new Pelicula();
+            p2.SetTitulo("Parasyte");
+            p2.SetAño(2019);
+            Console.WriteLine("{0}({1})", p2.GetTitulo(), p2.GetAño());
+            
         }
     }
 }
