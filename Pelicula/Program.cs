@@ -39,7 +39,7 @@ namespace Pelicula
         public void Imprime()
         {
           //Console.WriteLine($"{titulo} ({año})");
-            Console.WriteLine($"{titulo} ({año}");
+            Console.WriteLine($"{titulo} ({año})");
 
         }
         
@@ -94,11 +94,17 @@ namespace Pelicula
             p1.SetTitulo("Everything Everywhere All at Once");
             p1.SetAño(2022);
             Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
+            p1.AgregaActor(new Actor("Michelle Yeoh", 1962));
+            p1.AgregaActor(new Actor("Ke Huy Quan", 1971));
+            p1.ImprimeActores();
+
             Pelicula p2 = new Pelicula();
             p2.SetTitulo("Parasyte");
             p2.SetAño(2019);
-            
             Console.WriteLine("{0}({1})", p2.GetTitulo(), p2.GetAño());
+            p2.AgregaActor(new Actor("Choi Woo-shik", 1990));
+            p2.AgregaActor(new Actor("Cho Yeo-jeong", 1981));
+            p2.ImprimeActores();
             
             List<Pelicula> peliculas = new List<Pelicula>();
             peliculas.Add(new Pelicula("Ratatouille", 2007));
@@ -111,16 +117,7 @@ namespace Pelicula
             {
                 film.Imprime();
             }
-            
-            p1.AgregaActor(new Actor("Michelle Yeoh", 1962));
-            p1.AgregaActor(new Actor("Ke Huy Quan", 1971));
-            p1.ImprimeActores();
-
-            p2.AgregaActor(new Actor("Choi Woo-shik", 1990));
-            p2.AgregaActor(new Actor("Cho Yeo-jeong", 1981));
-            p2.ImprimeActores();
-                
-            
+                     
         }
     
      }
