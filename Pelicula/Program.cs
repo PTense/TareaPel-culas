@@ -7,15 +7,15 @@ namespace Pelicula
     public class Pelicula
     {
         //Campos
-            private String titulo;
-            private int16 año;
-            private String país;
-            private String director;
+            private string titulo;
+            private int año;
+            private string pais;
+            private string director;
             private List<Actor> actores = new List<Actor>();
 
         //Constructores
-        public Pelicula()
-        public Pelicula(string titulo, int16 año)
+        public Pelicula(){}
+        public Pelicula(string titulo, int año)
         {
             this.titulo=titulo;
             this.año=año;
@@ -25,12 +25,12 @@ namespace Pelicula
                 
         //Métodos
         public string GetTitulo(){return titulo;}
-        public void SetTitulo(string title){titulo=title}
+        public void SetTitulo(string title){titulo=title;}
         
         public int GetAño(){return año;}
         public void SetAño(int year){año=year;}
         public string GetPais(){return pais;}
-        public string SetPais(string cty){pais=cty;}
+        public void SetPais(string cty){pais=cty;}
         public string GetDirector(){return director;}
         public void SetDirector(string dir){director=dir;}
      
@@ -38,7 +38,7 @@ namespace Pelicula
         
         public void Imprime()
         {
-     //       Console.WriteLine($"{titulo} ({año})");
+          //Console.WriteLine($"{titulo} ({año})");
             Console.WriteLine($"{titulo} ({año}");
 
         }
@@ -52,8 +52,9 @@ namespace Pelicula
             foreach (Actor persona in actores)
             {
                 Console.WriteLine($"{persona.GetNombre()} ({persona.GetAño()})");
+            }
 
-
+        }
     }
 
     public class Actor
@@ -63,7 +64,7 @@ namespace Pelicula
         int año;
 
         //Constructores
-        public Actor()
+        public Actor(){}
         public Actor(string nombre, int año)
         {
             this.nombre = nombre;
@@ -72,11 +73,12 @@ namespace Pelicula
 
         //Métodos 
         public string GetNombre(){return nombre;}
-        public void SetNombre(string name){nombre=name}
+        public void SetNombre(string name){nombre=name;}
         public int GetAño(){return año;}
         public void SetAño(int year){año=year;}
         
     }
+ 
 
     // Puedes probar tu código en Main() pero lo importante
     // es que pase las pruebas
@@ -92,10 +94,10 @@ namespace Pelicula
             p1.SetTitulo("Everything Everywhere All at Once");
             p1.SetAño(2022);
             Console.WriteLine("{0}({1})", p1.GetTitulo(), p1.GetAño());
-            
             Pelicula p2 = new Pelicula();
             p2.SetTitulo("Parasyte");
             p2.SetAño(2019);
+            
             Console.WriteLine("{0}({1})", p2.GetTitulo(), p2.GetAño());
             
             List<Pelicula> peliculas = new List<Pelicula>();
@@ -117,5 +119,6 @@ namespace Pelicula
                 
             
         }
-    }
+    
+     }
 }
