@@ -112,10 +112,13 @@ namespace Pelicula
                 film.Imprime();
             }
             
-            p1.AgregaActor(new Actor("Ryan Gosling", 1980));
-            p1.AgregaActor(new Actor("Emma Stone", 1988));
-            
+            p1.AgregaActor(new Actor("Michelle Yeoh", 1962));
+            p1.AgregaActor(new Actor("Ke Huy Quan", 1971));
             p1.ImprimeActores();
+
+            p2.AgregaActor(new Actor("Choi Woo-shik", 1990));
+            p2.AgregaActor(new Actor("Cho Yeo-jeong", 1981));
+            p2.ImprimeActores();
                 
             
         }
